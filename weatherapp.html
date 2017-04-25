@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <title>Alex's Weather Center</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- sets the viewport size -->
+        <link rel="stylesheet" href="weatherapp.css"> <!-- my local css file -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"><!-- bootstrap files -->
+        <link rel="stylesheet" href="superhero.css"> <!-- bootstrap files -->
+        <link rel="icon" href="resources/favicon.ico"> <!-- link for my favicon -->
+    </head>
+
+    <body id="animate-area">
+
+        <!-- calling scripts -->
+        <script type="text/javascript" src="https://code.jquery.com/jquery-2.2.4.min.js"></script> <!-- official javascript -->
+        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script> <!-- official javascript ui -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script> <!-- bootstrap js -->
+        <script src="weatherapp.js"></script> <!-- my project js -->
+
+        <!-- calling the facebook SDK -->
+        <div id="fb-root"></div>
+            <script>(function(d, s, id) {
+                var js, fjs = d.getElementsByTagName(s)[0];
+                if (d.getElementById(id)) return;
+                js = d.createElement(s); js.id = id;
+                js.src = "//connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.7";
+                fjs.parentNode.insertBefore(js, fjs);
+                }(document, 'script', 'facebook-jssdk'));
+            </script>
+
+
+        <!-- Nav bar -->
+        <nav class="navbar navbar-default">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <a class="navbar-brand">Alex's Weather Center</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li class="navbarButton"><a href="FAQ.html" target="_blank">FAQ</a></li>
+                <li class="navbarButton"><a href="about.html" target="_blank">About</a></li>
+                <li class="navbarButton"><a href="https://darksky.net/poweredby/" target="_blank">Powered by Dark Sky</a></li>
+                <li class="navbarButton"><a href="https://developers.google.com/maps/documentation/geocoding/start" target="_blank">Google Geocoding</a></li>
+            </ul>
+            <div class="fb-share-button" data-href="https://ryanbrashear.github.io/weatherapp/weatherapp.html" data-layout="button_count" data-mobile-iframe="true"><a class="fb-xfbml-parse-ignore" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https%3A%2F%2Fryanbrashear.github.io%2Fweatherapp%2Fweatherapp.html&amp;src=sdkpreparse">Share</a></div>
+             <form>
+                <button type="button" id="search" class="searchButton btn btn-primary">Get Weather</button>
+                <input type="text" class="searchBar" id="searchBarText" placeholder="Enter Zip/Address/City"></input>
+                <!--<button type="button"" id="remove" class="glyphicon glyphicon-remove"></button>-->
+            </form>
+        </div>
+        </nav>
+
+        <!-- Weather cards -->
+        <div class="container">
+            <div class="row">
+            </div>
+        </div>
+
+        <!-- Template Div -->
+            <div id="template" style="display:none">
+            <div class="col-md-4 col-xs-12 @@class@@">
+                <!-- "front" card, I.E. today's weather -->
+                <div class="col-xs-12 weatherCard" style="background-image: url('@@URL@@');color: @@color@@">
+                    <button type="button" id="remove" class="glyphicon glyphicon-remove"></button>
+                    <div class="card-block">
+                        <h1 class="card-title currentTemp">Current Temp: @@currentTemp@@&#8457</h1>
+                        <ul class="list-group list-group-flush cardList">
+                            <li class="list-group-item cityState">Location: @@cityState@@</li>
+                            <li class="list-group-item conditions">Current Conditions: @@conditions@@</li>
+                            <li class="list-group-item maxTemp">High Temp: @@maxTemp@@&#8457</li>
+                            <li class="list-group-item minTemp">Low Temp: @@minTemp@@&#8457</li>
+                            <li class="list-group-item rain">Chance of Precipitation: @@rain@@%</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- will be the back of the card if I can get flipping to work properly -->
+                <div class="col-xs-12 weatherCardBack @@class2@@">
+                    <div class="card-block">
+                        <h1 class="card-title currentTemp">Weekly Forecast For @@zipCode@@</h1>
+                        <ul class="list-group list-group-flush cardList">
+                            <li class="list-group-item">Today || High: @@0max@@&#8457 <br /> Low: @@0low@@&#8457 <br /> Precip. Chance: @@0precip@@%</li>
+                            <li class="list-group-item">@@date1@@ || High: @@1max@@&#8457 <br /> Low: @@1low@@&#8457 <br /> Precip. Chance: @@1precip@@%</li>
+                            <li class="list-group-item">@@date2@@ || High: @@2max@@&#8457 <br /> Low: @@2low@@&#8457 <br /> Precip. Chance: @@2precip@@%</li>
+                            <li class="list-group-item">@@date3@@ || High: @@3max@@&#8457 <br /> Low: @@3low@@&#8457 <br /> Precip. Chance: @@3precip@@%</li>
+                            <li class="list-group-item">@@date4@@ || High: @@4max@@&#8457 <br /> Low: @@4low@@&#8457 <br /> Precip. Chance: @@4precip@@%</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div> 
+    </body>
+<html>

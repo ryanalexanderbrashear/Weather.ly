@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: -2000px 0; }
+}
+
+body {
+	font-family: Roboto !important;
+}
+
+#animate-area	{ 
+	width: 100%; 
+	height: 100%; 
+	background-image: url("http://eskipaper.com/images/dark-striped-wallpaper-1.jpg");
+	background-position: 0px 0px;
+	background-repeat: repeat;
+
+	animation: animatedBackground 40s linear infinite;
+}
+
+.navbar {
+	background-color: #1C1A59 !important;
+	border: 2px white solid;
+}
+
+#addNewCard {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	height: 30px;
+	width: 30px;
+}
+
+.weatherCard {
+	margin-top:4%;
+	border: 2px white solid;
+	background-image: url("resources/clear-day.jpg");
+	background-size: 100% 100%;
+	color:black;
+	border-radius:10px;
+	
+}
+
+.weatherCardBack {
+	margin-top:4%;
+	border: 2px white solid;
+	background-color: #1C1A59;
+	background-size: 100% 100%;
+	color:white;
+	border-radius:10px;
+}
+
+.searchBar {
+	float:right;
+	margin-top: .8%;
+	color: black;
+	margin-left: 1%;
+}
+
+.searchButton {
+	float: right;
+	margin-top: .3%;
+	margin-left: 1%;
+	background-color: #575594 !important;
+	border: 2px white solid !important;
+}
+
+.currentTemp {
+	text-align:center;
+}
+
+.navbarButton {
+	background-color: #575594 !important;
+}
+
+ul {
+	border: 2px white solid;
+}
+
+li {
+	border: 2px white solid;
+}
+
+.cardList li {
+	border: 2px black solid;
+	opacity: .9;
+	background-color: #575594;
+}
+
+#remove {
+	background-color:black;
+	color:white;
+	margin-top: 2px;
+	float:left;
+	margin-top: .8% !important;
+}
+
+.fb-share-button {
+	float:left;
+	margin-left: 10px;
+	margin-top: 15px;
+}
+

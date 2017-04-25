@@ -1,0 +1,25 @@
+Google Maps Geocoding API Key:
+
+AIzaSyDJPzeEP8rfaPZRV8gtyT2keKmKR45ROO8
+
+Sample API call: 
+https://maps.googleapis.com/maps/api/geocode/json?address=1600+Amphitheatre+Parkway,+Mountain+View,+CA&key=AIzaSyDJPzeEP8rfaPZRV8gtyT2keKmKR45ROO8
+
+Dark Sky Weather API Key:
+
+93fa32d43382a60a9eb23ee3cb6b9d82
+
+Sample API call: 
+https://api.darksky.net/forecast/93fa32d43382a60a9eb23ee3cb6b9d82/37.8267,-122.4233
+
+
+* Pull weather data from Dark Sky API using $.ajax()
+
+* Add weather data to 1 card 
+-spans with classes -- insert properties one by one
+-html() or append() -- write HTML directly into the card
+
+* Convert zip code to lat, lng using Google Geocode API
+---look up a zip code, get the lat and lng from the API
+
+* Allow user to enter zip code and change weather to that location 
